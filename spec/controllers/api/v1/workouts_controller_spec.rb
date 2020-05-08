@@ -4,10 +4,7 @@ RSpec.describe Api::V1::WorkoutsController, type: :controller do
   describe "GET#index" do
     let!(:workout_one) { Workout.create(name: "push-ups", body_part: "chest", workout_type: "body weight", reps: 10, sets: 5, workout_time: "15 minutes", instructions: "1. Get down on all fours, 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty_level: 1, image_url: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg") }
     let!(:workout_two) { Workout.create(name: "crunches", body_part: "abdominal", workout_type: "body weight", reps: 10, sets: 5, workout_time: "15 minutes", instructions: "1. Lie down on your back.
-    2. Bend your legs and stabilize your lower body.
-    3. Cross your hands to opposite shoulders, or place them behind your ears without pulling on your neck.
-    4. Lift your head and shoulder blades from the ground. Exhale as you rise.
-    5. Lower, returning to your starting point. Inhale as you lower.", difficulty_level: 2, image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/news/featured_images/crunch-628x363-1445437801.JPG?resize=980:*") }
+    2. Bend your legs and stabilize your lower body. 3. Cross your hands to opposite shoulders, or place them behind your ears without pulling on your neck. 4. Lift your head and shoulder blades from the ground. Exhale as you rise. 5. Lower, returning to your starting point. Inhale as you lower.", difficulty_level: 2, image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/news/featured_images/crunch-628x363-1445437801.JPG?resize=980:*") }
 
     it "returns a successful response status and a content type of JSON" do
       get :index
@@ -20,7 +17,7 @@ RSpec.describe Api::V1::WorkoutsController, type: :controller do
       get :index
 
       response_body = JSON.parse(response.body)
-      binding.pry
+
       expect(response_body.length).to eq 2
 
       expect(response_body[0]["name"]).to eq workout_one.name
