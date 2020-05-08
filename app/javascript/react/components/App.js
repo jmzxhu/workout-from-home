@@ -1,7 +1,20 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import WorkoutIndexContainer from './WorkoutIndexContainer'
+
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={WorkoutIndexContainer} />
+          <Route exact path='/workouts' component={WorkoutIndexContainer} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
