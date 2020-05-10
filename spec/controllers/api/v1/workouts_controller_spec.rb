@@ -41,4 +41,33 @@ RSpec.describe Api::V1::WorkoutsController, type: :controller do
       expect(response_body[1]["image_url"]).to eq workout_two.image_url
     end
   end
+
+  describe "GET#show" do
+    let!(:workout_one) { Workout.create(name: "push-ups", body_part: "chest", workout_type: "body weight", reps: 10, sets: 5, workout_time: "15 minutes", instructions: "1. Get down on all fours, 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty_level: 1, image_url: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg") }
+
+    it "returns a successful response status and a content type of json" do
+      get :show, params: {id: workout_one.id}
+
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq "application/json"
+    end
+
+    it "returns a workout's information from the data base" do
+      get :show, params: {id: workout_one.id}
+
+      response_body = JSON.parse(response.body)
+      binding.pry
+      expect(response_body.length).to equal 12
+
+      expect(response_body["name"]).to eq workout_one.name
+      expect(response_body["body_part"]).to eq workout_one.body_part
+      expect(response_body["workout_type"]).to eq workout_one.workout_type
+      expect(response_body["reps"]).to eq workout_one.reps
+      expect(response_body["sets"]).to eq workout_one.sets
+      expect(response_body["workout_time"]).to eq workout_one.workout_time
+      expect(response_body["instructions"]).to eq workout_one.instructions
+      expect(response_body["difficulty_level"]).to eq workout_one.difficulty_level
+      expect(response_body["image_url"]).to eq workout_one.image_url
+    end
+  end
 end
