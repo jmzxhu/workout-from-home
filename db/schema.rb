@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(version: 2020_05_07_175243) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "title", null: false
     t.integer "reps", null: false
     t.integer "sets", null: false
-    t.string "workout_time", null: false
-    t.string "workout_type", null: false
-    t.string "body_part", null: false
-    t.integer "difficulty_level", null: false
-    t.string "image_url", null: false
+    t.string "time", null: false
+    t.string "category", null: false
+    t.string "body", null: false
+    t.integer "difficulty", null: false
+    t.string "image", null: false
     t.text "instructions", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

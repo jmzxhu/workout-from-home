@@ -6,14 +6,14 @@ const WorkoutShowTile = (props) => {
   return(
     <div>
       <div>
-        <img className="workout-image-url" src={workout.image_url}/>
+        <img className="workout-image" src={workout.image}/>
       </div>
       <div className="workout-show-tile">
         <div className="workout-name">
-          Exercise: {workout.name}
+          Exercise: {workout.title}
         </div>
         <div className="workout-difficulty">
-          Difficulty Level: {workout.difficulty_level}
+          Difficulty Level: {workout.difficulty}
         </div>
         <div class="workout-reps">
           Reps: {workout.reps}
@@ -22,13 +22,13 @@ const WorkoutShowTile = (props) => {
           Sets: {workout.sets}
         </div>
         <div class="workout-time">
-          Time: {workout.workout_time}
+          Time: {workout.time}
         </div>
         <div class="workout-body">
-          Concentration: {workout.body_part}
+          Concentration: {workout.body}
         </div>
-        <div class="workout-type">
-          Type: {workout.workout_type}
+        <div class="workout-category">
+          Type: {workout.category}
         </div>
       </div>
       <div className="fade_bar"></div>
