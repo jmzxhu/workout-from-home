@@ -15,24 +15,24 @@ const WorkoutShowTile = (props) => {
         <div className="workout-difficulty">
           Difficulty Level: {workout.difficulty}
         </div>
-        <div class="workout-reps">
+        <div className="workout-reps">
           Reps: {workout.reps}
         </div>
-        <div class="workout-sets">
+        <div className="workout-sets">
           Sets: {workout.sets}
         </div>
-        <div class="workout-time">
+        <div className="workout-time">
           Time: {workout.time}
         </div>
-        <div class="workout-body">
+        <div className="workout-body">
           Concentration: {workout.body}
         </div>
-        <div class="workout-category">
+        <div className="workout-category">
           Type: {workout.category}
         </div>
       </div>
       <div className="fade_bar"></div>
-      <div class="workout-instructions">
+      <div className="workout-instructions">
         Instructions: {workout.instructions}
       </div>
       <div className="fade_bar">
