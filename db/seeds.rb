@@ -1,4 +1,8 @@
-Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Get down on all fours, 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
+user_one = User.create(email: "Bodybuilder123@email.com", password: "123456", screen_name: "Bodybuilder123")
+user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "TheRock")
+user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "IloveCrossfit")
+
+workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Get down on all fours, 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
 
 Workout.create(title: "crunches", body: "abdominal", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Lie down on your back.
 2. Bend your legs and stabilize your lower body.
@@ -34,3 +38,9 @@ Workout.create(title: "Plank raise tap crunch", body: "shoulders", category: "bo
 4. Keep your body in a straight line as you reach your opposite (left) arm under your body, pull your right leg toward your core, and tap your right foot with your left hand.
 5. Return to the plank position.
 6. Do all of your reps, and then repeat on your opposite side.", difficulty: 3, image: "https://media1.popsugar-assets.com/files/thumbor/608qynueYNtGlVsZpNNjSpscRsQ/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/06/14/784/n/1922729/4b0aa10159417724bd23c1.78911403_Plank-Shoulder-Tap/i/Plank-Shoulder-Tap.jpg")
+
+Comment.create(content:"This is by far the best exercise!", workout: workout_one, user: user_one)
+
+Comment.create(content:"I still do this everyday, highly recommended!", workout: workout_one, user: user_two)
+
+Comment.create(content:"I incorporate this into all my WOD!", workout: workout_one, user: user_three)

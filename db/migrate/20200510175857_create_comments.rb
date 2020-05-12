@@ -3,7 +3,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
     create_table :comments do |t|
       t.text :content, null: false
       t.belongs_to :workout
-      t.belongs_to :user
 
       t.timestamps null: false
     end

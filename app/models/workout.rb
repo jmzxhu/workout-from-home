@@ -8,4 +8,6 @@ class Workout < ApplicationRecord
    validates :difficulty, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 3 }
    validates :image, presence: true
    validates :instructions, presence: true
+
+   has_many :comments
 end

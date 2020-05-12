@@ -7,8 +7,6 @@ import WorkoutCommentTile from './WorkoutCommentTile'
 const WorkoutShowContainer = (props) => {
   const [workout, setWorkout] = useState({})
   const [comments, setComments] = useState([])
-  const [currentUser, setCurrentUser] = useState({})
-
 
   useEffect(() => {
     let id = props.match.params.id
@@ -26,9 +24,8 @@ const WorkoutShowContainer = (props) => {
       return response.json()
     })
     .then((body) => {
-      debugger
-      setWorkout(body)
-      // setComments(body)
+      setWorkout(body.workout)
+      setComments(body.workout.comments)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -66,7 +63,6 @@ const WorkoutShowContainer = (props) => {
     <WorkoutCommentTile
       key={comment.id}
       comment={comment}
-      currentUser={props.currentUser}
     />
     )
   })
@@ -79,6 +75,7 @@ const WorkoutShowContainer = (props) => {
       <WorkoutCommentSectionTile
         addNewComment={addNewComment}
       />
+        <div className="fade_bar"></div>
       <div>
         {commentsArray}
       </div>

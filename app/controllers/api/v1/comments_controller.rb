@@ -2,7 +2,7 @@ class Api::V1::CommentsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    workout = Workout.find(params[:id])
+    workout = Workout.find(params[:workout_id])
     render json: workout.comments
   end
 
@@ -13,9 +13,9 @@ class Api::V1::CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     comment.workout = workout
     comment.user = user
-    binding.pry
+
     if comment.save
-      render json: { comment: comment }
+      render json: comment
     else
       render json: { error: comment.errors.full_messages }, status: :unprocessable_entity
     end
