@@ -7,11 +7,11 @@
 }
 
 body {
-  background-color: var(--gray);
+  background-color: var(--white);
 }
 
-.top-bar, li {
-  background-color: var(--light-blue);
+.top-bar, .sign-tile {
+  background-color: var(--dark-blue);
 }
 
 a {
@@ -88,4 +88,60 @@ a {
   padding-right: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.comment-tile {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: var(--light-blue);
+  max-width: 50%;
+  border-radius: 5px;
+}
+
+.comment-form {
+  padding: 20px;
+}
+
+textarea {
+  max-width: 50%;
+  margin: 10px;
+  border:1px solid var(--gray);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: var(--light-blue);
+}
+
+textarea:focus {
+    border-color:var(--gray);
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:var(--orange);
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.button {
+  padding:5px 15px;
+  background:var(--orange);
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
+}
+
+.center{
+    text-align: center;
 }

@@ -29,7 +29,6 @@ const WorkoutShowContainer = (props) => {
       return response.json()
     })
     .then((body) => {
-      debugger
       setWorkout(body.workout)
       setComments(body.workout.comments)
       setCurrentUser(body.workout.scope)
@@ -38,7 +37,6 @@ const WorkoutShowContainer = (props) => {
   }, [])
 
   const addNewComment = formPayload => {
-    debugger
     let id = props.match.params.id
     fetch(`/api/v1/workouts/${id}/comments`, {
       credentials: "same-origin",
@@ -72,7 +70,6 @@ const WorkoutShowContainer = (props) => {
 
   let commentsArray = comments.map((comment) => {
     let deleteComment = () => {
-      debugger
       fetch(`/api/v1/comments/${comment.id}`, {
         credentials: "same-origin",
         method: "DELETE",
@@ -83,13 +80,12 @@ const WorkoutShowContainer = (props) => {
       })
       .then((response) => response.json())
       .then(body => {
-        debugger
         setComments(body.comments)
       })
     }
 
     const confirmDelete = () => {
-      let confirmMessage = confirm("Do you want to delete this item?")
+      let confirmMessage = confirm("Do you want to delete your comment?")
       if (confirmMessage === true) {
         deleteComment()
       }
@@ -97,14 +93,13 @@ const WorkoutShowContainer = (props) => {
 
     let deleteButton
     if (currentUser.id !== "") {
-      debugger
       if (currentUser.id === comment.user.id) {
         deleteButton = (
           <button className="button" onClick={confirmDelete}>Delete</button>
         )
       }
     }
-    
+
     return(
     <WorkoutCommentTile
       key={comment.id}
@@ -115,16 +110,19 @@ const WorkoutShowContainer = (props) => {
     )
   })
 
+  let commentForm = "Please sign in to add a comment"
+  if (currentUser) {
+    commentForm = <WorkoutCommentSectionTile addNewComment={addNewComment} />
+  }
+
   return(
     <div>
       <WorkoutShowTile
         workout={workout}
       />
-      <WorkoutCommentSectionTile
-        addNewComment={addNewComment}
-      />
+      {commentForm}
         <div className="fade_bar"></div>
-      <div>
+      <div className="comments-show">
         {commentsArray}
       </div>
     </div>

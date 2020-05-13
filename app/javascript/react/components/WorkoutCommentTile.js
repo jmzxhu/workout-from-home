@@ -8,11 +8,19 @@ const WorkoutCommentTile = (props) => {
   let confirmDelete = props.confirmDelete
 
   return(
-    <div>
-      <h5>{user}</h5>
+    <div className="comment-tile">
+    <span class="left">
+      <h6>{user}</h6>
+    </span>
+    <span class="right">
+      <div className="delete-button">
+        {deleteButton}
+      </div>
+    </span>
+    <span class="center">
       <p>{date}</p>
+    </span>
       <p>{comment.content}</p>
-      <div>{deleteButton}</div>
     </div>
   )
 }

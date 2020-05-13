@@ -23,19 +23,19 @@ const WorkoutCommentSectionTile = (props) => {
 
   return(
     <div>
-    <form onSubmit={handleSubmit}>
+    <form className="comment-form" onSubmit={handleSubmit}>
       <label htmlFor="content">Comments:
         <textarea
           placeholder="Let us know what you think"
           id="content"
           name="content"
-          rows="5"
-          cols="33"
+          rows="4"
+          cols="20"
           value={newComment.content}
           onChange={handleChange}
         ></textarea>
       </label>
-      <input type="submit" value="submit"/>
+      <input className="button" type="submit" value="submit"/>
       </form>
     </div>
   )
