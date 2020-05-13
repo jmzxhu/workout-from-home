@@ -78,7 +78,19 @@ a {
 .workout-show-tile {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
   text-align: center;
+}
+
+.workout-description-tile, .workout-metrics-tile, .workout-types-tile {
+  flex: auto;
+  border: 2px solid var(--dark-blue);
+  border-radius: 5px;
+  width: 100px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .workout-instructions {
@@ -97,20 +109,27 @@ a {
   background-color: var(--light-blue);
   max-width: 50%;
   border-radius: 5px;
+  color: var(--gray);
+  border:2px solid var(--dark-blue);
 }
 
 .comment-form {
   padding: 20px;
 }
 
+label {
+  font-weight: bold;
+}
+
 textarea {
   max-width: 50%;
   margin: 10px;
-  border:1px solid var(--gray);
+  border:2px solid var(--dark-blue);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   background-color: var(--light-blue);
+
 }
 
 textarea:focus {
@@ -134,6 +153,7 @@ input[type=submit] {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+
 .right{
     float:right;
 }
