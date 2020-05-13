@@ -21,6 +21,14 @@ class Api::V1::CommentsController < ApplicationController
     end
   end
 
+  def destroy
+
+    comment = Comment.find(params[:id])
+    workout = comment.workout
+    comment.delete
+    render json: workout.comments
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content)

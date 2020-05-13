@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :workouts, only: [:index, :show] do
         resources :comments, only: [:create, :index]
       end
+      resources :comments, only: [:destroy]
     end
   end
 end

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import WorkoutShowTile from './WorkoutShowTile'
 import WorkoutCommentSectionTile from './WorkoutCommentSectionTile'
@@ -7,6 +8,10 @@ import WorkoutCommentTile from './WorkoutCommentTile'
 const WorkoutShowContainer = (props) => {
   const [workout, setWorkout] = useState({})
   const [comments, setComments] = useState([])
+  const [redirect, setRedirect] = useState(false)
+  const [currentUser, setCurrentUser] = useState({
+    id: ""
+  })
 
   useEffect(() => {
     let id = props.match.params.id
@@ -24,8 +29,10 @@ const WorkoutShowContainer = (props) => {
       return response.json()
     })
     .then((body) => {
+      debugger
       setWorkout(body.workout)
       setComments(body.workout.comments)
+      setCurrentUser(body.workout.scope)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -58,11 +65,52 @@ const WorkoutShowContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
+  if (redirect) {
+    let id = props.match.params.id
+    return <Redirect to={`/workouts/${id}`} />
+  }
+
   let commentsArray = comments.map((comment) => {
+    let deleteComment = () => {
+      debugger
+      fetch(`/api/v1/comments/${comment.id}`, {
+        credentials: "same-origin",
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          "Accept": "application/json"
+        }
+      })
+      .then((response) => response.json())
+      .then(body => {
+        debugger
+        setComments(body.comments)
+      })
+    }
+
+    const confirmDelete = () => {
+      let confirmMessage = confirm("Do you want to delete this item?")
+      if (confirmMessage === true) {
+        deleteComment()
+      }
+    }
+
+    let deleteButton
+    if (currentUser.id !== "") {
+      debugger
+      if (currentUser.id === comment.user.id) {
+        deleteButton = (
+          <button className="button" onClick={confirmDelete}>Delete</button>
+        )
+      }
+    }
+    
     return(
     <WorkoutCommentTile
       key={comment.id}
       comment={comment}
+      deleteButton={deleteButton}
+      confirmDelete={confirmDelete}
     />
     )
   })
