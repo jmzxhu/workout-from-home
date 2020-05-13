@@ -19,7 +19,7 @@ const WorkoutIndexContainer = (props) => {
       return response.json()
     })
     .then((body) => {
-      setWorkouts(body)
+      setWorkouts(body.workouts)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
