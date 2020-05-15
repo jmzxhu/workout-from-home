@@ -100,6 +100,7 @@ a {
   padding-right: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
+  white-space: pre-wrap;
 }
 
 .comment-tile {
@@ -119,9 +120,14 @@ a {
 
 label {
   font-weight: bold;
+  max-width: 50%;
+  margin: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
-textarea {
+.comment-text {
   max-width: 50%;
   margin: 10px;
   border:2px solid var(--dark-blue);
@@ -129,20 +135,15 @@ textarea {
   -moz-border-radius: 5px;
   border-radius: 5px;
   background-color: var(--light-blue);
-
-}
-
-textarea:focus {
-    border-color:var(--gray);
 }
 
 input[type=submit] {
-    padding:5px 15px;
-    background:var(--orange);
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+  padding:5px 15px;
+  background:var(--orange);
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .button {
