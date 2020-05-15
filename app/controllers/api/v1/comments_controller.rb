@@ -22,7 +22,6 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def destroy
-
     comment = Comment.find(params[:id])
     workout = comment.workout
     comment.delete

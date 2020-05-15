@@ -25,7 +25,7 @@ const WorkoutCommentSectionTile = (props) => {
     <div>
     <form className="comment-form" onSubmit={handleSubmit}>
       <label htmlFor="content">Leave us a comment:
-        <textarea
+        <textarea className="comment-text"
           placeholder="Let us know what you think!"
           id="content"
           name="content"

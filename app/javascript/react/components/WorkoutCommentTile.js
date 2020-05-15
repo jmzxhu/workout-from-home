@@ -12,12 +12,12 @@ const WorkoutCommentTile = (props) => {
     <span class="left">
       <h6>{user}</h6>
     </span>
-    <span class="right">
+    <span className="right">
       <div className="delete-button">
         {deleteButton}
       </div>
     </span>
-    <span class="center">
+    <span className="center">
       <p>{date}</p>
     </span>
       <p>{comment.content}</p>
