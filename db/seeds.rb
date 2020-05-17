@@ -1,6 +1,6 @@
-user_one = User.create(email: "Bodybuilder123@email.com", password: "123456", screen_name: "Bodybuilder123")
-user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "TheRock")
-user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "IloveCrossfit")
+user_one = User.create(email: "Bodybuilder123@email.com", password: "123456", screen_name: "Bodybuilder123", zip_code: "33101")
+user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "TheRock", zip_code: "90001")
+user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "IloveCrossfit", zip_code: "77001")
 user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", screen_name: "JamesAdmin", role: "admin")
 
 

@@ -122,7 +122,7 @@ const WorkoutShowContainer = (props) => {
         workout={workout}
       />
       {commentForm}
-        <div className="fade_bar"></div>
+      <div className="fade_bar"></div>
       <div className="comments-show">
         {commentsArray}
       </div>
