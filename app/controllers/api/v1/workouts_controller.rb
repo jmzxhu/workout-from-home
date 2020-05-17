@@ -4,7 +4,15 @@ class Api::V1::WorkoutsController < ApplicationController
   # before_action :authorize_user, except: [:index, :show]
 
   def index
-    render json: { workouts: Workout.all, user: current_user }
+    key = ENV["OPEN_WEATHER_API_KEY"]
+
+    zip = current_user.zip_code
+
+    url = "http://api.openweathermap.org/data/2.5/weather?q=#{zip},us&units=imperial&appid=#{key}"
+    api_response = Faraday.get(url)
+
+    weather = JSON.parse(api_response.body)
+    render json: { workouts: Workout.all, user: current_user, weather: weather }
   end
 
   def show
@@ -13,7 +21,7 @@ class Api::V1::WorkoutsController < ApplicationController
 
   def create
     workout = Workout.new(workout_params)
-    
+
     if workout.save
       render json: workout
     else

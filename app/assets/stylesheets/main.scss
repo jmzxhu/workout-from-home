@@ -19,7 +19,7 @@ a {
 }
 
 .tile-container {
-  margin :10px;
+  margin: 0 auto;
 }
 
 .workout-title {
@@ -48,6 +48,7 @@ a {
 .workout-tile-name, .workout-tile-difficulty {
   padding-top: 3px;
   text-align: center;
+  overflow: auto;
 }
 
 .workout-image {
@@ -59,6 +60,7 @@ a {
   border-radius: 100px;
   width: 500px;
   height: 300px;
+  overflow: auto;
 }
 
 .workout-image img {
@@ -156,13 +158,40 @@ input[type=submit] {
 }
 
 .right{
-    float:right;
+    float: right;
 }
 
 .left{
-    float:left;
+    float: left;
 }
 
 .center{
     text-align: center;
+}
+
+.grid-cotainer {
+  max-width: 100%;
+  // max-height: 50%;
+}
+.weather {
+  border-style: ridge;
+  border-radius: 10px;
+  width: 50%;
+  height: 60%;
+  margin: 0 auto;
+  background-color: var(--light-blue);
+  color: var(--orange);
+  overflow: auto;
+}
+
+.weather-icon {
+  height: 45%;
+  float: left;
+}
+
+.weather-block {
+  padding-top: 0 auto;
+  padding-left: 8px;
+  float: left;
+  overflow: auto;
 }

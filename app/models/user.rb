@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :screen_name, presence: true, uniqueness: true
+  validates :zip_code, presence: true
 end
