@@ -94,7 +94,7 @@ const WorkoutShowContainer = (props) => {
 
     let deleteButton
     if (currentUser.id !== "") {
-      if (currentUser.id === comment.user.id) {
+      if (currentUser.id === comment.user.id || currentUser.role === "admin") {
         deleteButton = (
           <button className="button" onClick={confirmDelete}>Delete</button>
         )
@@ -122,7 +122,8 @@ const WorkoutShowContainer = (props) => {
         workout={workout}
       />
       {commentForm}
-      <div className="fade_bar"></div>
+      <div className="fade_bar">
+      </div>
       <div className="comments-show">
         {commentsArray}
       </div>

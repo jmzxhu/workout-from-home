@@ -4,11 +4,11 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import WorkoutIndexContainer from './WorkoutIndexContainer'
 import WorkoutShowContainer from './WorkoutShowContainer'
 import WorkoutNewFormContainer from './WorkoutNewFormContainer'
-
+import Background from '../../../assets/images/homeworkout.jpg'
 
 export const App = (props) => {
   return (
-    <div>
+    <div id="background" src={Background}>
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={WorkoutIndexContainer} />

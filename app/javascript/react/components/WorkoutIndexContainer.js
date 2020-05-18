@@ -76,8 +76,8 @@ const WorkoutIndexContainer = (props) => {
       <div className="grid-container">
         <div className="tile-container grid-x grid-margin-x">
           {workoutarray}
-          </div>
         </div>
+      </div>
 
     </div>
   )

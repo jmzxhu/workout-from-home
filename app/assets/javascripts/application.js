@@ -16,3 +16,12 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(function(){
+   let flashDurationInSeconds = 5;
+   let flashContainerId = 'flash-messages';
+   function removeFlashMessages() {
+     $('#' + flashContainerId).remove();
+   }
+   setTimeout(removeFlashMessages, flashDurationInSeconds * 1000);
+});

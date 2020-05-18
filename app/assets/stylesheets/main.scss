@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap');
+
 :root {
   --dark-blue: #2D3142;
   --gray: #BFC0C0;
@@ -6,20 +8,31 @@
   --light-blue: #4F5D75;
 }
 
+h1, h2, h3, #flash-messages {
+  font-family: 'Baloo Chettan 2', serif;
+  text-align: center;
+}
+
+#background, {
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(homeworkout.jpg);
+}
+
 body {
-  background-color: var(--white);
+  font-family: 'Baloo Chettan 2', serif;
 }
 
 .top-bar, .sign-tile {
   background-color: var(--dark-blue);
+  font-family: 'Baloo Chettan 2', serif;
 }
 
 a {
   color: var(--orange);
-}
-
-.tile-container {
-  margin: 0 auto;
+  font-family: 'Baloo Chettan 2', serif;
+  &:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  }
 }
 
 .workout-title {
@@ -31,6 +44,11 @@ a {
   width: 300px;
   height: 250px;
   border: 3px solid var(--orange);
+  transition: all .5s linear;
+  &:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  }
 }
 
 .image-tile {
@@ -53,14 +71,18 @@ a {
 
 .workout-image {
   display: block;
-  margin-top: 20px;
+  padding-top: 0 auto;
   margin-left: auto;
   margin-right: auto;
   border: 4px solid var(--dark-blue);
   border-radius: 100px;
   width: 500px;
-  height: 300px;
+  height: 250px;
   overflow: auto;
+}
+
+.show-tile {
+  padding-top: 10px;
 }
 
 .workout-image img {
@@ -74,7 +96,7 @@ a {
   color:white;
   height:2px;
   background:black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(var(--dark-blue)), to(var(--gray)));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(var(--orange)), to(var(--gray)));
 }
 
 .workout-show-tile {
@@ -122,7 +144,7 @@ a {
 
 label {
   font-weight: bold;
-  max-width: 50%;
+  max-width: 100%;
   margin: 10px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -158,26 +180,22 @@ input[type=submit] {
 }
 
 .right{
-    float: right;
+  float: right;
 }
 
 .left{
-    float: left;
+  float: left;
 }
 
 .center{
-    text-align: center;
+  text-align: center;
 }
 
-.grid-cotainer {
-  max-width: 100%;
-  // max-height: 50%;
-}
 .weather {
   border-style: ridge;
   border-radius: 10px;
-  width: 50%;
-  height: 60%;
+  width: 45%;
+  height: 100%;
   margin: 0 auto;
   background-color: var(--light-blue);
   color: var(--orange);
@@ -185,7 +203,8 @@ input[type=submit] {
 }
 
 .weather-icon {
-  height: 45%;
+  width: 4em;
+  height: 4em;
   float: left;
 }
 
@@ -194,4 +213,35 @@ input[type=submit] {
   padding-left: 8px;
   float: left;
   overflow: auto;
+}
+
+#flash-messages {
+  font-family: 'Baloo Chettan 2', serif;
+  background-color: var(--dark-blue);
+  color: var(--orange);
+}
+
+.workout-page {
+  paddng-top: 10px;
+}
+
+.form-page {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.workout-form {
+border:2px solid var(--dark-blue);
+display:block;
+margin-left: 20%;
+margin-right: 20%;
+padding-top: 20px;
+}
+
+.devise-form {
+  border:2px solid var(--dark-blue);
+  display:block;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 20px;
 }
