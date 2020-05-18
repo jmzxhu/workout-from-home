@@ -18,8 +18,8 @@
 $(function(){ $(document).foundation(); });
 
 $(function(){
-   let flashDurationInSeconds = 5;
-   let flashContainerId = 'flash-messages';
+   var flashDurationInSeconds = 5;
+   var flashContainerId = 'flash-messages';
    function removeFlashMessages() {
      $('#' + flashContainerId).remove();
    }
