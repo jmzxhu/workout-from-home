@@ -13,6 +13,9 @@ const WeatherTile = (props) => {
           <div className="weather">
             <img className="weather-icon" src={iconLink}/>
             <div className="weather-block">
+              {weather.condition}
+            </div>
+            <div className="weather-block">
               {weather.city}
             </div>
             <div className="weather-block">
@@ -25,7 +28,7 @@ const WeatherTile = (props) => {
               Low: {`${Math.round(weather.minTemperature)}${symbol}`}
             </div>
             <div className="weather-block">
-              High: {`${Math.round(weather.maxTemperature)}${symbol}`} 
+              High: {`${Math.round(weather.maxTemperature)}${symbol}`}
             </div>
           </div>
         </div>

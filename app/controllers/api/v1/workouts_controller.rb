@@ -32,12 +32,4 @@ class Api::V1::WorkoutsController < ApplicationController
   def workout_params
     params.require(:workout).permit(:title, :reps, :sets, :time, :category, :body, :difficulty, :image, :instructions)
   end
-
-  # private
-  # def authorize_user
-  #   if !user_signed_in?
-  #     raise ActionController::RoutingError.new("not found")
-  #     redirect_to_root_path
-  #   end
-  # end
 end

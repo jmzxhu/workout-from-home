@@ -8,15 +8,13 @@ import Background from '../../../assets/images/homeworkout.jpg'
 
 export const App = (props) => {
   return (
-    <div>
+    <div id="background" src={Background}>
       <BrowserRouter>
         <Switch>
-          <div id="background" src={Background}>
-            <Route exact path='/' component={WorkoutIndexContainer} />
-            <Route exact path='/workouts' component={WorkoutIndexContainer} />
-            <Route exact path='/workouts/new' component={WorkoutNewFormContainer} />
-            <Route exact path='/workouts/:id' component={WorkoutShowContainer} />
-          </div>
+          <Route exact path='/' component={WorkoutIndexContainer} />
+          <Route exact path='/workouts' component={WorkoutIndexContainer} />
+          <Route exact path='/workouts/new' component={WorkoutNewFormContainer} />
+          <Route exact path='/workouts/:id' component={WorkoutShowContainer} />
         </Switch>
       </BrowserRouter>
     </div>
