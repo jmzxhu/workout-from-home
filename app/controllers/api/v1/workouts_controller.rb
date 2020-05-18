@@ -1,7 +1,6 @@
 class Api::V1::WorkoutsController < ApplicationController
   protect_from_forgery with: :null_session
   protect_from_forgery unless: -> { request.format.json? }
-  # before_action :authorize_user, except: [:index, :show]
 
   def index
     key = ENV["OPEN_WEATHER_API_KEY"]
@@ -33,4 +32,12 @@ class Api::V1::WorkoutsController < ApplicationController
   def workout_params
     params.require(:workout).permit(:title, :reps, :sets, :time, :category, :body, :difficulty, :image, :instructions)
   end
+
+  # private
+  # def authorize_user
+  #   if !user_signed_in?
+  #     raise ActionController::RoutingError.new("not found")
+  #     redirect_to_root_path
+  #   end
+  # end
 end

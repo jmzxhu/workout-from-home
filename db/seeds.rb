@@ -1,10 +1,10 @@
 user_one = User.create(email: "Bodybuilder123@email.com", password: "123456", screen_name: "Bodybuilder123", zip_code: "33101")
 user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "TheRock", zip_code: "90001")
 user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "IloveCrossfit", zip_code: "77001")
-user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", screen_name: "JamesAdmin", role: "admin")
+user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", screen_name: "JamesAdmin", role: "admin", zip_code: "02135")
 
 
-workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Get down on all fours, 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
+workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Get down on all fours. 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
 
 Workout.create(title: "crunches", body: "abdominal", category: "body weight", reps: 10, sets: 5, time: "15 minutes", instructions: "1. Lie down on your back.
 2. Bend your legs and stabilize your lower body.

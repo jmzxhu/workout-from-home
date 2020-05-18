@@ -4,9 +4,9 @@ const WorkoutShowTile = (props) => {
   let workout = props.workout
 
   return(
-    <div>
-      <div>
-        <img className="workout-image" src={workout.image}/>
+    <div className="show-tile">
+      <div className="workout-image">
+        <img src={workout.image}/>
       </div>
       <div className="workout-show-tile">
         <div className="workout-description-tile">
@@ -39,7 +39,10 @@ const WorkoutShowTile = (props) => {
       </div>
       <div className="fade_bar"></div>
       <div className="workout-instructions">
-        Instructions: {workout.instructions}
+        Instructions:
+        <div className="instruction-list">
+          {workout.instructions}
+        </div>
       </div>
       <div className="fade_bar">
       </div>
