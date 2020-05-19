@@ -5,9 +5,10 @@ user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", scre
 
 
 workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "9 minutes", instructions: "1. Get down on all fours.
-  2. placing your hands slightly wider than your shoulders.
-  3. Straighten your arms and legs.
-  4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up.
+2. placing your hands slightly wider than your shoulders.
+3. Straighten your arms and legs.
+4. Lower your body until your chest nearly touches the floor.
+5. Pause, then push yourself back up.
   6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
 Comment.create(content:"I've been doing this exercise since I was a teenager and still do it everyday!", workout: workout_one, user: user_one)
 Comment.create(content:"I used to do 500 pushups a day when I was training for the WWE.", workout: workout_one, user: user_two)
