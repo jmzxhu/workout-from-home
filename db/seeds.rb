@@ -4,7 +4,11 @@ user_three = User.create(email: "Crossfitguy@email.com", password: "123456", scr
 user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", screen_name: "JamesAdmin", role: "admin", zip_code: "02135")
 
 
-workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "9 minutes", instructions: "1. Get down on all fours. 2. placing your hands slightly wider than your shoulders. 3. Straighten your arms and legs. 4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up. 6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
+workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body weight", reps: 10, sets: 5, time: "9 minutes", instructions: "1. Get down on all fours.
+  2. placing your hands slightly wider than your shoulders.
+  3. Straighten your arms and legs.
+  4. Lower your body until your chest nearly touches the floor. 5. Pause, then push yourself back up.
+  6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
 Comment.create(content:"I've been doing this exercise since I was a teenager and still do it everyday!", workout: workout_one, user: user_one)
 Comment.create(content:"I used to do 500 pushups a day when I was training for the WWE.", workout: workout_one, user: user_two)
 Comment.create(content:"This is a great workout. If this is too easy for you, I recommend doing it slowly.", workout: workout_one, user: user_three)
@@ -63,3 +67,12 @@ workout_seven = Workout.create(title: "Burpee", body: "legs", category: "body we
 Comment.create(content:"I prefer to lift weights but this is a great cardio that burns a lot of calories.", workout: workout_seven, user: user_one)
 Comment.create(content:"I rather do my own stunts than do burpees!", workout: workout_seven, user: user_two)
 Comment.create(content:"IMO, this is the most effective exercise. I love it!", workout: workout_seven, user: user_three)
+
+workout_eight = Workout.create(title: "Jumping Jacks", body: "legs", category: "body weight", reps: 30, sets: 3, time: "15 minutes", instructions: "1. Stand upright with your legs together, arms at your sides.
+2. Bend your knees slightly, and jump into the air.
+3. As you jump, spread your legs to be about shoulder-width apart. Stretch your arms out and over your head.
+4 .Jump back to starting position.
+5. Repeat.", difficulty: 3, image: "https://cdn1.coachmag.co.uk/sites/coachmag/files/styles/16x9_746/public/2018/08/jumping-jacks.jpg?itok=H3LNmECR&timestamp=1534248088")
+Comment.create(content:"This is a good warmup to get the blood flowing!", workout: workout_eight, user: user_one)
+Comment.create(content:"This exercise is great!", workout: workout_eight, user: user_two)
+Comment.create(content:"I agreed, great exercise!", workout: workout_eight, user: user_three)

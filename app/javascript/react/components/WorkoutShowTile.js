@@ -33,7 +33,7 @@ const WorkoutShowTile = (props) => {
             Concentration: {workout.body}
           </div>
           <div className="workout-category">
-            Type: {workout.category}
+            Category: {workout.category}
           </div>
         </div>
       </div>
