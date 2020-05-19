@@ -1,6 +1,6 @@
 user_one = User.create(email: "Bodybuilder123@email.com", password: "123456", screen_name: "Bodybuilder123", zip_code: "33101")
-user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "TheRock", zip_code: "90001")
-user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "IloveCrossfit", zip_code: "77001")
+user_two = User.create(email: "dwaynejohnson@email.com", password: "123456", screen_name: "The Rock", zip_code: "90001")
+user_three = User.create(email: "Crossfitguy@email.com", password: "123456", screen_name: "I love Crossfit", zip_code: "77001")
 user_admin = User.create(email: "JamesAdmin@email.com", password: "123456", screen_name: "JamesAdmin", role: "admin", zip_code: "02135")
 
 
@@ -9,7 +9,7 @@ workout_one = Workout.create(title: "Push-ups", body: "chest", category: "body w
 3. Straighten your arms and legs.
 4. Lower your body until your chest nearly touches the floor.
 5. Pause, then push yourself back up.
-  6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
+6. Repeat.", difficulty: 1, image: "https://cimg3.ibsrv.net/cimg/www.fitday.com/693x350_85-1/503/26girlpush-108503.jpg")
 Comment.create(content:"I've been doing this exercise since I was a teenager and still do it everyday!", workout: workout_one, user: user_one)
 Comment.create(content:"I used to do 500 pushups a day when I was training for the WWE.", workout: workout_one, user: user_two)
 Comment.create(content:"This is a great workout. If this is too easy for you, I recommend doing it slowly.", workout: workout_one, user: user_three)
